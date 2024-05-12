@@ -1,7 +1,10 @@
+import { VERSION } from 'svelte/compiler';
 import { router, setupProgress } from '@inertiajs/core'
 import App from './App.svelte'
 import SSR from './SSR.svelte'
 import store from './store'
+
+const SVELTE_MAJOR_VERSION = parseInt(VERSION.split('.')[0]);
 
 export default async function createInertiaApp({ id = 'app', resolve, setup, progress = {}, page }) {
   const isServer = typeof window === 'undefined'
@@ -44,7 +47,14 @@ export default async function createInertiaApp({ id = 'app', resolve, setup, pro
   }
 
   if (isServer) {
-    const { html, head } = SSR.render({ id, initialPage })
+    const { html, head } = await (async () => {
+      if (SVELTE_MAJOR_VERSION < 5) {
+        return SSR.render({ id, initialPage })
+      } else {
+        const { render } = await import('svelte/server')
+        return render(SSR, { props: { id, initialPage } })
+      }
+    })()
 
     return {
       body: html,
