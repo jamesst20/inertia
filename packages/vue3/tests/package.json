@@ -11,8 +11,8 @@
     "dev": "npx nodemon --exec 'npm run server:run'"
   },
   "dependencies": {
-    "@inertiajs/core": "file:../../core",
-    "@inertiajs/vue3": "file:..",
+    "@inertiajs/core": "workspace:*",
+    "@inertiajs/vue3": "workspace:*",
     "vue": "^3.4.27"
   },
   "devDependencies": {
