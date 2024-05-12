@@ -1,25 +1,25 @@
 import { router, setupProgress, type InertiaAppResponse, type Page } from '@inertiajs/core'
 import type { ComponentType } from 'svelte'
-import SvelteApp from './components/App.svelte'
-import SSR, { type SSRProps } from './components/SSR.svelte'
+import App from './components/App.svelte'
+import type { SSRProps } from './components/SSR.svelte'
+import SSR from './components/SSR.svelte'
 import store from './store'
-import type { ComponentResolver, InertiaComponentType } from './types'
+import type { ComponentsResolver, ResolvedComponents } from './types'
 
 type SvelteRenderResult = { html: string; head: string; css?: { code: string } }
 type SSRComponent = ComponentType<SSR> & { render?: (props: SSRProps) => SvelteRenderResult }
 
 interface CreateInertiaAppProps {
   id?: string
-  resolve: ComponentResolver
+  resolve: ComponentsResolver
   setup: (props: {
     el: Element
-    // @ts-ignore
-    App: ComponentType<SvelteApp>
+    App: ComponentType<App>
     props: {
       initialPage: Page
-      resolveComponent: ComponentResolver
+      resolveComponent: ComponentsResolver
     }
-  }) => void | SvelteApp
+  }) => void | App
   progress?:
     | false
     | {
@@ -38,16 +38,16 @@ export default async function createInertiaApp({
   setup,
   progress = {},
   page,
-  ssr
+  ssr,
 }: CreateInertiaAppProps): InertiaAppResponse {
   const isServer = typeof window === 'undefined'
   const el = isServer ? null : document.getElementById(id)
-  const initialPage = page || JSON.parse(el?.dataset.page ?? '{}')
+  const initialPage: Page = page || JSON.parse(el?.dataset?.page || '{}')
   const resolveComponent = (name: string, page: Page) => Promise.resolve(resolve(name, page))
 
   await resolveComponent(initialPage.component, initialPage).then((initialComponent) => {
     store.set({
-      component: initialComponent as unknown as InertiaComponentType,
+      component: initialComponent,
       page: initialPage,
     })
   })
@@ -62,7 +62,7 @@ export default async function createInertiaApp({
       resolveComponent,
       swapComponent: async ({ component, page, preserveState }) => {
         store.update((current) => ({
-          component: component as InertiaComponentType,
+          component: component as ResolvedComponents,
           page,
           key: preserveState ? current.key : Date.now(),
         }))
@@ -75,27 +75,25 @@ export default async function createInertiaApp({
 
     setup({
       el,
-      App: SvelteApp,
+      App,
       props: {
         initialPage,
         resolveComponent,
       },
     })
-
-    return
   }
 
   if (isServer) {
     if (!ssr) {
       throw new Error(`createInertiaApp must provide ssr(...) for server-side rendering.`)
     }
-  
-    const { html, head, css } = ssr(SSR, { id, initialPage })
-  
+
+    const { html, head, css } = ssr(SSR as SSRComponent, { id, initialPage })
+
     return {
       body: html,
       head: [
-        head, 
+        head,
         // Note: Svelte 5 no longer output CSS
         ...(css?.code ? [`<style data-vite-css>${css?.code}</style>`] : []),
       ],

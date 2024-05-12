@@ -1,10 +1,9 @@
-import type { Page, PageProps } from '@inertiajs/core'
+import type { Page } from '@inertiajs/core'
 import type { ComponentType } from 'svelte'
 
-export type ComponentResolver = (name: string, page: Page) => ComponentType | Promise<ComponentType>
+export type ComponentsResolver = (name: string, page: Page) => ResolvedComponents | Promise<ResolvedComponents>
 
-export interface InertiaComponentType extends ComponentType {
-  default: InertiaComponentType
-  layout: InertiaComponentType
-  props: PageProps
+export type ResolvedComponents = {
+  default?: ComponentType
+  layout?: ComponentType
 }
