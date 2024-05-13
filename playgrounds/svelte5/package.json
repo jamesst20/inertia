@@ -1,0 +1,25 @@
+{
+  "name": "@inertiajs/svelte5-playground",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && vite build --ssr"
+  },
+  "devDependencies": {
+    "@inertiajs/svelte5": "workspace:*",
+    "@sveltejs/vite-plugin-svelte": "^4.0.0-next.0",
+    "@tsconfig/svelte": "^5.0.4",
+    "autoprefixer": "^10.4.19",
+    "axios": "^1.6.8",
+    "laravel-vite-plugin": "^1.0.2",
+    "lodash": "^4.17.21",
+    "postcss": "^8.4.38",
+    "svelte": "^5.0.0-next.1",
+    "svelte-check": "^3.7.1",
+    "tailwindcss": "^3.4.3",
+    "tslib": "^2.6.2",
+    "typescript": "^5.4.5",
+    "vite": "^5.2.11"
+  }
+}
