@@ -1,9 +1,12 @@
 import { router, setupProgress, type InertiaAppResponse, type Page } from '@inertiajs/core'
 import type { ComponentType } from 'svelte'
 import SvelteApp from './components/App.svelte'
-import SSR from './components/SSR.svelte'
+import SSR, { type SSRProps } from './components/SSR.svelte'
 import store from './store'
 import type { ComponentResolver, InertiaComponentType } from './types'
+
+type SvelteRenderResult = { html: string; head: string; css?: { code: string } }
+type SSRComponent = ComponentType<SSR> & { render?: (props: SSRProps) => SvelteRenderResult }
 
 interface CreateInertiaAppProps {
   id?: string
@@ -26,6 +29,7 @@ interface CreateInertiaAppProps {
         showSpinner?: boolean
       }
   page?: Page
+  ssr?: (AppSSR: SSRComponent, props: SSRProps) => SvelteRenderResult
 }
 
 export default async function createInertiaApp({
@@ -34,6 +38,7 @@ export default async function createInertiaApp({
   setup,
   progress = {},
   page,
+  ssr
 }: CreateInertiaAppProps): InertiaAppResponse {
   const isServer = typeof window === 'undefined'
   const el = isServer ? null : document.getElementById(id)
@@ -80,11 +85,20 @@ export default async function createInertiaApp({
     return
   }
 
-  // Svelte types are written for the DOM API and not the SSR API.
-  const { html, head, css } = (SSR as any).render({ id, initialPage })
-
-  return {
-    body: html,
-    head: [head, `<style data-vite-css>${css.code}</style>`],
+  if (isServer) {
+    if (!ssr) {
+      throw new Error(`createInertiaApp must provide ssr(...) for server-side rendering.`)
+    }
+  
+    const { html, head, css } = ssr(SSR, { id, initialPage })
+  
+    return {
+      body: html,
+      head: [
+        head, 
+        // Note: Svelte 5 no longer output CSS
+        ...(css?.code ? [`<style data-vite-css>${css?.code}</style>`] : []),
+      ],
+    }
   }
 }
