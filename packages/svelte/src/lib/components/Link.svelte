@@ -1,21 +1,36 @@
+<script context="module" lang="ts">
+  import type { Snippet } from 'svelte'
+  import type { HTMLAnchorAttributes, HTMLButtonAttributes } from 'svelte/elements'
+  import type { VisitOptions } from '@jamesst20/core'
+
+  type LinkProps = {
+    href: string
+    as?: keyof HTMLElementTagNameMap,
+    class?: string
+    children: Snippet
+  } & Partial<VisitOptions> & Partial<HTMLAnchorAttributes> & Partial<HTMLButtonAttributes>
+</script>
+
 <script lang="ts">
-  import type { Method, PreserveStateOption, RequestPayload } from '@jamesst20/inertia-core'
-  import { beforeUpdate } from 'svelte'
-  import { inertia } from '../index'
+  import { default as inertia } from '../link'
 
-  export let href: string
-  export let as: keyof HTMLElementTagNameMap = 'a'
-  export let data: RequestPayload = {}
-  export let method: Method = 'get'
-  export let replace: boolean = false
-  export let preserveScroll: PreserveStateOption = false
-  export let preserveState: PreserveStateOption | null = null
-  export let only: string[] = []
-  export let except: string[] = []
-  export let headers: Record<string, string> = {}
-  export let queryStringArrayFormat: 'brackets' | 'indices' = 'brackets'
+  let {
+    href,
+    as = 'a',
+    children,
+    data = {},
+    method = 'get',
+    replace = false,
+    preserveScroll = false,
+    preserveState = undefined,
+    only = [],
+    except = [],
+    headers = {},
+    queryStringArrayFormat = 'brackets',
+    ...restProps
+  }: LinkProps = $props()
 
-  beforeUpdate(() => {
+  $effect.pre(() => {
     if (as === 'a' && method.toLowerCase() !== 'get') {
       console.warn(
         `Creating POST/PUT/PATCH/DELETE <a> links is discouraged as it causes "Open Link in New Tab/Window" accessibility issues.\n\nPlease specify a more appropriate element using the "as" attribute. For example:\n\n<Link href="${href}" method="${method}" as="button">...</Link>`,
@@ -24,7 +39,7 @@
   })
 </script>
 
-<!-- svelte-ignore a11y-no-static-element-interactions -->
+<!-- svelte-ignore a11y_no_static_element_interactions -->
 <svelte:element
   this={as}
   use:inertia={{
@@ -40,24 +55,7 @@
     queryStringArrayFormat,
   }}
   {...as === 'a' ? { href } : {}}
-  {...$$restProps}
-  on:focus
-  on:blur
-  on:click
-  on:dblclick
-  on:mousedown
-  on:mousemove
-  on:mouseout
-  on:mouseover
-  on:mouseup
-  on:cancel-token
-  on:before
-  on:start
-  on:progress
-  on:finish
-  on:cancel
-  on:success
-  on:error
+  {...restProps}
 >
-  <slot />
+  {@render children()}
 </svelte:element>

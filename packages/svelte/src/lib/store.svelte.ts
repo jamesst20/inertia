@@ -1,5 +1,4 @@
 import type { Page } from '@jamesst20/inertia-core'
-import { writable } from 'svelte/store'
 import type { ResolvedComponent } from './types'
 
 interface Store {
@@ -8,7 +7,7 @@ interface Store {
   key?: number | null
 }
 
-const store = writable<Store>({
+const store: Store = $state({
   component: null,
   page: null,
   key: null,

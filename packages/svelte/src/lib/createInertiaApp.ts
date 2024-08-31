@@ -2,11 +2,9 @@ import { router, setupProgress, type InertiaAppResponse, type Page } from '@jame
 import type { ComponentType } from 'svelte'
 import App from './components/App.svelte'
 import SSR, { type SSRProps } from './components/SSR.svelte'
-import store from './store'
+import store from './store.svelte'
 import type { ComponentResolver, ResolvedComponent } from './types'
-
-type SvelteRenderResult = { html: string; head: string; css: { code: string } }
-type SSRComponent = ComponentType<SSR> & { render: (props: SSRProps) => SvelteRenderResult }
+import { render } from 'svelte/server'
 
 interface CreateInertiaAppProps {
   id?: string
@@ -43,18 +41,16 @@ export default async function createInertiaApp({
   const resolveComponent = (name: string, page: Page) => Promise.resolve(resolve(name, page))
 
   await resolveComponent(initialPage.component, initialPage).then((initialComponent) => {
-    store.set({
-      component: initialComponent,
-      page: initialPage,
-    })
+    store.component = initialComponent
+    store.page = initialPage
   })
 
   if (isServer) {
-    const { html, head, css } = (SSR as SSRComponent).render({ id, initialPage })
+    const { html, head } = render(SSR, { props: { id, initialPage } as SSRProps})
 
     return {
       body: html,
-      head: [head, `<style data-vite-css>${css.code}</style>`],
+      head: [head],
     }
   }
 
@@ -66,11 +62,9 @@ export default async function createInertiaApp({
     initialPage,
     resolveComponent,
     swapComponent: async ({ component, page, preserveState }) => {
-      store.update((current) => ({
-        component: component as ResolvedComponent,
-        page,
-        key: preserveState ? current.key : Date.now(),
-      }))
+      store.component = component as ResolvedComponent
+      store.page = page
+      store.key = preserveState ? store.key : Date.now()
     },
   })
 

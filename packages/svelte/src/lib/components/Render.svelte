@@ -5,37 +5,38 @@
   type RenderProps = {
     component: ComponentType
     props?: PageProps
-    children?: RenderProps[]
-  } | null
+    childComponents?: RenderProps[]
+  }
 
-  export const h = (component: ComponentType, props?: PageProps, children?: RenderProps[]): RenderProps => {
+  export const h = (component: ComponentType, props?: PageProps, childComponents?: RenderProps[]): RenderProps => {
     return {
       component,
       ...(props ? { props } : {}),
-      ...(children ? { children } : {}),
+      ...(childComponents ? { childComponents } : {}),
     }
   }
 </script>
 
 <script lang="ts">
-  import store from '../store'
+  import store from '../store.svelte.js'
 
-  export let component: ComponentType
-  export let props: PageProps = {}
-  export let children: RenderProps[] = []
+  let { component, props = {}, childComponents = [] }: RenderProps = $props()
 
   let prevComponent: ComponentType
-  let key: number
-  $: if (prevComponent !== component) {
-    key = Date.now()
-    prevComponent = component
-  }
+  let key: number | null = $state(null)
+
+  $effect(() => {
+    if (prevComponent !== component) {
+      key = Date.now()
+      prevComponent = component
+    }
+  })
 </script>
 
-{#if $store.component}
+{#if store.component}
   {#key key}
     <svelte:component this={component} {...props}>
-      {#each children as child, index (component && component.length === index ? $store.key : null)}
+      {#each childComponents as child, index (component && component.length === index ? store.key : null)}
         <svelte:self {...child} />
       {/each}
     </svelte:component>

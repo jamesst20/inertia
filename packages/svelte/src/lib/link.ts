@@ -34,14 +34,14 @@ const link: Action<ActionElement, ActionParameters> = (node, options = {}) => {
       event.preventDefault()
 
       router.visit(node.href, {
-        onCancelToken: () => fireEvent('cancel-token'),
-        onBefore: (visit) => fireEvent('before', { detail: { visit } }),
-        onStart: (visit) => fireEvent('start', { detail: { visit } }),
-        onProgress: (progress) => fireEvent('progress', { detail: { progress } }),
-        onFinish: (visit) => fireEvent('finish', { detail: { visit } }),
-        onCancel: () => fireEvent('cancel'),
-        onSuccess: (page) => fireEvent('success', { detail: { page } }),
-        onError: (errors) => fireEvent('error', { detail: { errors } }),
+        onCancelToken: () => fireEvent('CancelToken'),
+        onBefore: (visit) => fireEvent('Before', { detail: { visit } }),
+        onStart: (visit) => fireEvent('Start', { detail: { visit } }),
+        onProgress: (progress) => fireEvent('Progress', { detail: { progress } }),
+        onFinish: (visit) => fireEvent('Finish', { detail: { visit } }),
+        onCancel: () => fireEvent('Cancel'),
+        onSuccess: (page) => fireEvent('Success', { detail: { page } }),
+        onError: (errors) => fireEvent('Error', { detail: { errors } }),
         ...options,
       })
     }

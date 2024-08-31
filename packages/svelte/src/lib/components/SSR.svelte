@@ -1,15 +1,13 @@
 <script context="module" lang="ts">
   import type { Page } from '@jamesst20/inertia-core'
+
   export type SSRProps = { id: string; initialPage: Page }
 </script>
 
 <script lang="ts">
   import App from './App.svelte'
 
-  interface $$Props extends SSRProps {}
-
-  export let id: $$Props['id']
-  export let initialPage: $$Props['initialPage']
+  let { id, initialPage }: SSRProps = $props()
 </script>
 
 <div data-server-rendered="true" {id} data-page={JSON.stringify(initialPage)}>
