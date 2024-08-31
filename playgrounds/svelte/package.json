@@ -1,5 +1,5 @@
 {
-  "name": "@inertiajs/svelte-playground",
+  "name": "@jamesst20/inertia-svelte-playground",
   "private": true,
   "type": "module",
   "scripts": {
@@ -7,7 +7,7 @@
     "build": "vite build && vite build --ssr"
   },
   "devDependencies": {
-    "@inertiajs/svelte": "^1.0.0",
+    "@jamesst20/inertia-svelte": "^1.0.0",
     "@sveltejs/vite-plugin-svelte": "^2.4.2",
     "autoprefixer": "^10.4.13",
     "axios": "^1.6.0",

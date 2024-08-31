@@ -1,5 +1,5 @@
-import { createInertiaApp } from '@inertiajs/vue2'
-import createServer from '@inertiajs/vue2/server'
+import { createInertiaApp } from '@jamesst20/inertia-vue2'
+import createServer from '@jamesst20/inertia-vue2/server'
 import Vue from 'vue'
 import { createRenderer } from 'vue-server-renderer'
 

@@ -1,12 +1,12 @@
 {
-  "name": "@inertiajs/vue2-playground",
+  "name": "@jamesst20/inertia-vue2-playground",
   "private": true,
   "scripts": {
     "dev": "vite",
     "build": "vite build && vite build --ssr"
   },
   "devDependencies": {
-    "@inertiajs/vue2": "^1.0.0",
+    "@jamesst20/inertia-vue2": "^1.0.0",
     "@vitejs/plugin-vue2": "^2.2.0",
     "@volar/vue-typescript": "^1.0.22",
     "autoprefixer": "^10.4.13",

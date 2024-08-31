@@ -4,7 +4,7 @@ export default { layout: Layout }
 </script>
 
 <script setup>
-import { Head } from '@inertiajs/vue2'
+import { Head } from '@jamesst20/inertia-vue2'
 
 defineProps({ users: Array })
 </script>

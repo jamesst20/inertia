@@ -6,7 +6,7 @@ import {
   Progress,
   router,
   shouldIntercept,
-} from '@inertiajs/core'
+} from '@jamesst20/inertia-core'
 import { FunctionalComponentOptions, PropType } from 'vue'
 
 export interface InertiaLinkProps {

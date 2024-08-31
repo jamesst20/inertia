@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { Method, PreserveStateOption, RequestPayload } from '@inertiajs/core'
+  import type { Method, PreserveStateOption, RequestPayload } from '@jamesst20/inertia-core'
   import { beforeUpdate } from 'svelte'
   import { inertia } from '../index'
 

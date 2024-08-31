@@ -1,5 +1,5 @@
-import { createInertiaApp } from '@inertiajs/svelte'
-import createServer from '@inertiajs/svelte/server'
+import { createInertiaApp } from '@jamesst20/inertia-svelte'
+import createServer from '@jamesst20/inertia-svelte/server'
 
 createServer((page) =>
   createInertiaApp({

@@ -1,12 +1,12 @@
 {
-  "name": "@inertiajs/react-playground",
+  "name": "@jamesst20/inertia-react-playground",
   "private": true,
   "scripts": {
     "dev": "vite",
     "build": "tsc --noEmit && vite build && vite build --ssr"
   },
   "devDependencies": {
-    "@inertiajs/react": "^1.0.0",
+    "@jamesst20/inertia-react": "^1.0.0",
     "@types/react": "^16.14.35",
     "@types/react-dom": "^16.9.18",
     "@vitejs/plugin-react": "^3.0.0",

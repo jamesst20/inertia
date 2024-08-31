@@ -1,12 +1,12 @@
 {
-  "name": "@inertiajs/vue3-playground",
+  "name": "@jamesst20/inertia-vue3-playground",
   "private": true,
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc && vite build && vite build --ssr"
   },
   "devDependencies": {
-    "@inertiajs/vue3": "^1.0.0",
+    "@jamesst20/inertia-vue3": "^1.0.0",
     "@vitejs/plugin-vue": "^4.0.0",
     "@volar/vue-typescript": "^1.0.22",
     "@vue/server-renderer": "^3.3.4",

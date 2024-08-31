@@ -1,4 +1,4 @@
-import { mergeDataIntoQueryString, Method, PageProps, Progress, router, shouldIntercept } from '@inertiajs/core'
+import { mergeDataIntoQueryString, Method, PageProps, Progress, router, shouldIntercept } from '@jamesst20/inertia-core'
 import { defineComponent, DefineComponent, h, PropType } from 'vue'
 
 export interface InertiaLinkProps {

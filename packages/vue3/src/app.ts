@@ -1,4 +1,4 @@
-import { createHeadManager, Page, PageProps, router } from '@inertiajs/core'
+import { createHeadManager, Page, PageProps, router } from '@jamesst20/inertia-core'
 import {
   computed,
   DefineComponent,

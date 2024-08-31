@@ -1,5 +1,5 @@
-import { createInertiaApp } from '@inertiajs/vue3'
-import createServer from '@inertiajs/vue3/server'
+import { createInertiaApp } from '@jamesst20/inertia-vue3'
+import createServer from '@jamesst20/inertia-vue3/server'
 import { renderToString } from '@vue/server-renderer'
 import { createSSRApp, h, type DefineComponent } from 'vue'
 

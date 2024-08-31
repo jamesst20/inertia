@@ -1,4 +1,4 @@
-import { createInertiaApp } from '@inertiajs/svelte'
+import { createInertiaApp } from '@jamesst20/inertia-svelte'
 
 createInertiaApp({
   resolve: (name) => {

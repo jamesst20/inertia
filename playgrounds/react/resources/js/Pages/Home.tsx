@@ -1,4 +1,4 @@
-import { Head, Link } from '@inertiajs/react'
+import { Head, Link } from '@jamesst20/inertia-react'
 import Layout from '../Components/Layout'
 
 const Home = () => {

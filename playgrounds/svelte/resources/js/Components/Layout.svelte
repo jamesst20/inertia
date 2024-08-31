@@ -1,5 +1,5 @@
 <script>
-  import { inertia, page } from '@inertiajs/svelte'
+  import { inertia, page } from '@jamesst20/inertia-svelte'
 </script>
 
 <nav class="flex items-center space-x-6 bg-slate-800 px-10 py-6 text-white">

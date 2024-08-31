@@ -1,4 +1,4 @@
-import { router, setupProgress, type InertiaAppResponse, type Page } from '@inertiajs/core'
+import { router, setupProgress, type InertiaAppResponse, type Page } from '@jamesst20/inertia-core'
 import type { ComponentType } from 'svelte'
 import SvelteApp from './components/App.svelte'
 import SSR from './components/SSR.svelte'

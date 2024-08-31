@@ -144,7 +144,7 @@
   </div>
 </template>
 <script>
-import { router } from '@inertiajs/vue2'
+import { router } from '@jamesst20/inertia-vue2'
 
 export default {
   data: () => ({

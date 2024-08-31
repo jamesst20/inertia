@@ -6,7 +6,7 @@ import {
   Progress,
   router,
   shouldIntercept,
-} from '@inertiajs/core'
+} from '@jamesst20/inertia-core'
 import { createElement, forwardRef, useCallback } from 'react'
 
 const noop = () => undefined

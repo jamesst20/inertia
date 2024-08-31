@@ -7,8 +7,8 @@ import type {
   Progress,
   RequestPayload,
   VisitOptions,
-} from '@inertiajs/core'
-import { router } from '@inertiajs/core'
+} from '@jamesst20/inertia-core'
+import { router } from '@jamesst20/inertia-core'
 import type { AxiosProgressEvent } from 'axios'
 import cloneDeep from 'lodash/cloneDeep'
 import isEqual from 'lodash/isEqual'

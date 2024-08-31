@@ -1,4 +1,4 @@
-import type { PageProps } from '@inertiajs/core'
+import type { PageProps } from '@jamesst20/inertia-core'
 import type { ComponentType } from 'svelte'
 
 export type ComponentResolver = (name: string) => ComponentType | Promise<ComponentType>

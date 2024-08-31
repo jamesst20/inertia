@@ -1,4 +1,4 @@
-import { router } from '@inertiajs/core'
+import { router } from '@jamesst20/inertia-core'
 import cloneDeep from 'lodash.clonedeep'
 import { ComponentOptions } from 'vue'
 

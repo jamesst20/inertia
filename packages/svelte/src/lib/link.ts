@@ -1,4 +1,4 @@
-import { mergeDataIntoQueryString, router, shouldIntercept, type VisitOptions } from '@inertiajs/core'
+import { mergeDataIntoQueryString, router, shouldIntercept, type VisitOptions } from '@jamesst20/inertia-core'
 import type { Action } from 'svelte/action'
 
 interface ActionElement extends HTMLElement {

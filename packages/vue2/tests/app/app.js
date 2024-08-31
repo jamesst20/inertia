@@ -1,4 +1,4 @@
-import { createInertiaApp, Link, router } from '@inertiajs/vue2'
+import { createInertiaApp, Link, router } from '@jamesst20/inertia-vue2'
 import Vue from 'vue'
 
 Vue.component('InertiaLink', Link)

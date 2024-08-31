@@ -1,5 +1,5 @@
 <script context="module" lang="ts">
-  import type { PageProps } from '@inertiajs/core'
+  import type { PageProps } from '@jamesst20/inertia-core'
   import type { InertiaComponentType } from '../types'
 
   type RenderProps = {

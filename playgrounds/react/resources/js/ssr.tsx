@@ -1,5 +1,5 @@
-import { createInertiaApp } from '@inertiajs/react'
-import createServer from '@inertiajs/react/server'
+import { createInertiaApp } from '@jamesst20/inertia-react'
+import createServer from '@jamesst20/inertia-react/server'
 import * as ReactDOMServer from 'react-dom/server'
 
 createServer((page) =>

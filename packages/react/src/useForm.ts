@@ -1,4 +1,4 @@
-import { FormDataConvertible, Method, Progress, router, VisitOptions } from '@inertiajs/core'
+import { FormDataConvertible, Method, Progress, router, VisitOptions } from '@jamesst20/inertia-core'
 import isEqual from 'lodash.isequal'
 import { useCallback, useEffect, useRef, useState } from 'react'
 import useRemember from './useRemember'

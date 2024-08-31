@@ -1,4 +1,4 @@
-import { Page, setupProgress } from '@inertiajs/core'
+import { Page, setupProgress } from '@jamesst20/inertia-core'
 import { Component, PluginObject } from 'vue'
 import App, { InertiaApp, InertiaProps, plugin } from './app'
 

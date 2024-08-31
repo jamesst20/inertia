@@ -1,4 +1,4 @@
-import { createInertiaApp } from '@inertiajs/vue2'
+import { createInertiaApp } from '@jamesst20/inertia-vue2'
 import Vue from 'vue'
 
 createInertiaApp({

@@ -4,7 +4,7 @@ export default { layout: Layout }
 </script>
 
 <script setup>
-import { Head, useForm } from '@inertiajs/vue2'
+import { Head, useForm } from '@jamesst20/inertia-vue2'
 
 const form = useForm('NewUser', {
   name: '',
