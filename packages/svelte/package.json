@@ -61,7 +61,7 @@
   "types": "./dist/index.d.ts",
   "type": "module",
   "dependencies": {
-    "@jamesst20/inertia-core": "file:../core",
+    "@jamesst20/inertia-core": "workspace:*",
     "lodash": "^4.17.21"
   }
 }

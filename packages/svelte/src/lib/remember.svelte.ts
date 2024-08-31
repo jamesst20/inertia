@@ -1,4 +1,4 @@
-import { router } from '@jamesst20/core'
+import { router } from '@jamesst20/inertia-core'
 
 function useRemember<State>(initialState: State, key?: string) {
   const restored = router.restore(key) as State | undefined
