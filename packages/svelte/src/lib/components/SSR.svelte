@@ -1,5 +1,5 @@
 <script context="module" lang="ts">
-  import type { Page } from '@inertiajs/core'
+  import type { Page } from '@jamesst20/inertia-core'
   export type SSRProps = { id: string; initialPage: Page }
 </script>
 

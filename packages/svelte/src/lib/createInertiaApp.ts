@@ -40,9 +40,9 @@ export default async function createInertiaApp({
   const isServer = typeof window === 'undefined'
   const el = isServer ? null : document.getElementById(id)
   const initialPage: Page = page || JSON.parse(el?.dataset?.page || '{}')
-  const resolveComponent = (name: string) => Promise.resolve(resolve(name))
+  const resolveComponent = (name: string, page: Page) => Promise.resolve(resolve(name, page))
 
-  await resolveComponent(initialPage.component).then((initialComponent) => {
+  await resolveComponent(initialPage.component, initialPage).then((initialComponent) => {
     store.set({
       component: initialComponent,
       page: initialPage,
