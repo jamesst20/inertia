@@ -1,10 +1,10 @@
 import { router, setupProgress, type InertiaAppResponse, type Page } from '@jamesst20/inertia-core'
+import { encode } from 'html-entities'
 import type { ComponentType } from 'svelte'
+import { render } from 'svelte/server'
 import App from './components/App.svelte'
-import SSR, { type SSRProps } from './components/SSR.svelte'
 import store from './store.svelte'
 import type { ComponentResolver, ResolvedComponent } from './types'
-import { render } from 'svelte/server'
 
 interface CreateInertiaAppProps {
   id?: string
@@ -46,10 +46,10 @@ export default async function createInertiaApp({
   })
 
   if (isServer) {
-    const { html, head } = render(SSR, { props: { id, initialPage } as SSRProps})
+    const { html, head } = render(App, {})
 
     return {
-      body: html,
+      body: `<div data-server-rendered="true" id="${id}" data-page="${encode(JSON.stringify(initialPage))}">${html}</div>`,
       head: [head],
     }
   }
