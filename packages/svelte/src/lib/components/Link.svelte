@@ -1,4 +1,4 @@
-<script context="module" lang="ts">
+<script module lang="ts">
   import type { Snippet } from 'svelte'
   import type { HTMLAnchorAttributes, HTMLButtonAttributes } from 'svelte/elements'
   import type { VisitOptions } from '@jamesst20/inertia-core'

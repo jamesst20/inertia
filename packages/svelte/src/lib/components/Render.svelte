@@ -1,6 +1,8 @@
-<script context="module" lang="ts">
+<script module lang="ts">
   import type { PageProps } from '@jamesst20/inertia-core'
   import type { ComponentType } from 'svelte'
+  
+  import Render from "./Render.svelte"
 
   type RenderProps = {
     component: ComponentType
@@ -37,7 +39,7 @@
   {#key key}
     <svelte:component this={component} {...props}>
       {#each childComponents as child, index (component && component.length === index ? store.key : null)}
-        <svelte:self {...child} />
+        <Render {...child} />
       {/each}
     </svelte:component>
   {/key}
