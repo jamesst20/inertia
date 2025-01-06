@@ -1,4 +1,4 @@
-import { router, VisitOptions } from '@inertiajs/core'
+import { router, VisitOptions } from '@jamesst20/inertia-core'
 import { onMounted, onUnmounted, ref, Ref } from 'vue'
 
 export default function usePrefetch(options: VisitOptions = {}): {

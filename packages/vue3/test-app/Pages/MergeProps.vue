@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { router } from '@inertiajs/vue3'
+import { router } from '@jamesst20/inertia-vue3'
 
 defineProps<{
   foo: number[]

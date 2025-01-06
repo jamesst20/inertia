@@ -1,5 +1,5 @@
 <script>
-  import { Link } from '@inertiajs/svelte'
+  import { Link } from '@jamesst20/inertia-svelte'
 
   let href = '/sleep';
 

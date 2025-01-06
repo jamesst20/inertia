@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Link, router } from '@inertiajs/vue3'
+import { Link, router } from '@jamesst20/inertia-vue3'
 
 defineProps<{ pageNumber: number; multiByte: string }>()
 </script>

@@ -3,7 +3,7 @@
 </script>
 
 <script lang="ts">
-  import { Deferred, WhenVisible } from '@inertiajs/svelte'
+  import { Deferred, WhenVisible } from '@jamesst20/inertia-svelte'
   import Spinner from '../Components/Spinner.svelte'
   import TestGrid from '../Components/TestGrid.svelte'
   import TestGridItem from '../Components/TestGridItem.svelte'

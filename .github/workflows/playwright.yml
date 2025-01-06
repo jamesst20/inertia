@@ -33,10 +33,10 @@ jobs:
         cd packages/${{ matrix.adapter }}/test-app
         npm install
 
-    - name: Local-link @inertiajs/core
+    - name: Local-link @jamesst20/inertia-core
       run: cd packages/core && npm link
 
-    - name: Local-link @inertiajs/${{ matrix.adapter }}
+    - name: Local-link @jamesst20/inertia-${{ matrix.adapter }}
       run: cd packages/${{ matrix.adapter }} && npm link
 
     - name: Install Playwright Browsers

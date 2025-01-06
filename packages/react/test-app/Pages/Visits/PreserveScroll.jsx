@@ -1,5 +1,5 @@
 import WithScrollRegion from '@/Layouts/WithScrollRegion.jsx'
-import { router } from '@inertiajs/react'
+import { router } from '@jamesst20/inertia-react'
 
 const PreserveScroll = ({ foo = 'default' }) => {
   const preserve = (e) => {

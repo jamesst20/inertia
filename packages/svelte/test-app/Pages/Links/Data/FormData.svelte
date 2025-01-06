@@ -1,6 +1,6 @@
 <script>
   import { onMount } from 'svelte'
-  import { inertia } from '@inertiajs/svelte'
+  import { inertia } from '@jamesst20/inertia-svelte'
 
   let linkData = new FormData()
 

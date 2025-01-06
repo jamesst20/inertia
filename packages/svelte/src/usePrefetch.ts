@@ -1,4 +1,4 @@
-import { router, type VisitOptions } from '@inertiajs/core'
+import { router, type VisitOptions } from '@jamesst20/inertia-core'
 import { onDestroy, onMount } from 'svelte'
 import { readonly, writable } from 'svelte/store'
 

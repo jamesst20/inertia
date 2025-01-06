@@ -1,4 +1,4 @@
-import { usePage } from '@inertiajs/react'
+import { usePage } from '@jamesst20/inertia-react'
 import { useEffect } from 'react'
 
 export default (props) => {

@@ -1,5 +1,5 @@
 import WithoutScrollRegion from '@/Layouts/WithoutScrollRegion.jsx'
-import { Link } from '@inertiajs/react'
+import { Link } from '@jamesst20/inertia-react'
 import { useId } from 'react'
 
 const PreserveState = ({ foo = 'default' }) => {

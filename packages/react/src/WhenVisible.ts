@@ -1,4 +1,4 @@
-import { ReloadOptions, router } from '@inertiajs/core'
+import { ReloadOptions, router } from '@jamesst20/inertia-core'
 import { createElement, ReactElement, useEffect, useRef, useState } from 'react'
 
 interface WhenVisibleProps {

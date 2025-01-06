@@ -1,4 +1,4 @@
-import { Page, router, setupProgress } from '@inertiajs/core'
+import { Page, router, setupProgress } from '@jamesst20/inertia-core'
 import { DefineComponent, Plugin, App as VueApp, createSSRApp, h } from 'vue'
 import App, { InertiaApp, InertiaAppProps, plugin } from './app'
 

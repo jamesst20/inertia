@@ -1,4 +1,4 @@
-import { usePoll } from '@inertiajs/react'
+import { usePoll } from '@jamesst20/inertia-react'
 
 export default () => {
   const { start, stop } = usePoll(

@@ -4,7 +4,7 @@
 
 <script>
   import { onMount } from 'svelte'
-  import { inertia } from '@inertiajs/svelte'
+  import { inertia } from '@jamesst20/inertia-svelte'
 
   export let foo = 'default'
 

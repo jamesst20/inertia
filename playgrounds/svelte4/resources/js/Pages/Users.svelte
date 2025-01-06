@@ -3,7 +3,7 @@
 </script>
 
 <script lang="ts">
-  import { usePrefetch } from '@inertiajs/svelte'
+  import { usePrefetch } from '@jamesst20/inertia-svelte'
 
   export let appName
   export let users = []

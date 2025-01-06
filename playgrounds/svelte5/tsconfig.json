@@ -12,7 +12,9 @@
     "module": "ESNext",
     "moduleResolution": "node",
     "paths": {
-      "@inertiajs/svelte/server": ["../../node_modules/@inertiajs/svelte/dist/server"]
+      "@jamesst20/inertia-svelte/server": [
+        "../../node_modules/@jamesst20/inertia-svelte/dist/server"
+      ]
     }
   },
   "include": [

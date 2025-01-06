@@ -1,5 +1,5 @@
 <script setup>
-import { router } from '@inertiajs/vue3'
+import { router } from '@jamesst20/inertia-vue3'
 import { getCurrentInstance, onMounted } from 'vue'
 
 defineProps({

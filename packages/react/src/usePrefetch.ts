@@ -1,4 +1,4 @@
-import { router, VisitOptions } from '@inertiajs/core'
+import { router, VisitOptions } from '@jamesst20/inertia-core'
 import { useEffect, useState } from 'react'
 
 export default function usePrefetch(options: VisitOptions = {}): {

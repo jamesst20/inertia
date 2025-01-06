@@ -1,4 +1,4 @@
-import { ReloadOptions, router } from '@inertiajs/core'
+import { ReloadOptions, router } from '@jamesst20/inertia-core'
 import { defineComponent, h, PropType } from 'vue'
 
 export default defineComponent({

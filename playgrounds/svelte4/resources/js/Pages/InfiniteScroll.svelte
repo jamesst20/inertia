@@ -3,7 +3,7 @@
 </script>
 
 <script lang="ts">
-  import { router, WhenVisible } from '@inertiajs/svelte'
+  import { router, WhenVisible } from '@jamesst20/inertia-svelte'
 
   export let appName
   export let items: {

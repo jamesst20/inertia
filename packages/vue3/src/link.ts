@@ -9,7 +9,7 @@ import {
   Progress,
   router,
   shouldIntercept,
-} from '@inertiajs/core'
+} from '@jamesst20/inertia-core'
 import { computed, defineComponent, DefineComponent, h, onMounted, onUnmounted, PropType, ref } from 'vue'
 
 export interface InertiaLinkProps {

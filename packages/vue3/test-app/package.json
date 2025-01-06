@@ -9,7 +9,7 @@
         "vue": "^3.4.33"
     },
     "dependencies": {
-        "@inertiajs/core": "file:../../core",
-        "@inertiajs/vue3": "file:.."
+        "@jamesst20/inertia-core": "file:../../core",
+        "@jamesst20/inertia-vue3": "file:.."
     }
 }

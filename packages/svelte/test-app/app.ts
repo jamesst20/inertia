@@ -1,4 +1,4 @@
-import { createInertiaApp, type ResolvedComponent, router } from '@inertiajs/svelte'
+import { createInertiaApp, type ResolvedComponent, router } from '@jamesst20/inertia-svelte'
 
 window.testing = { Inertia: router }
 

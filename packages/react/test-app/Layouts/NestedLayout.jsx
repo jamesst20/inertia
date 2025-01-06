@@ -1,4 +1,4 @@
-import { usePage } from '@inertiajs/react'
+import { usePage } from '@jamesst20/inertia-react'
 import { useId, useState } from 'react'
 
 export default ({ children }) => {

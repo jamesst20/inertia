@@ -1,4 +1,4 @@
-import { Link } from '@inertiajs/react'
+import { Link } from '@jamesst20/inertia-react'
 import { useState } from 'react'
 
 export default (props) => {

@@ -1,4 +1,4 @@
-import { Head, useForm } from '@inertiajs/react'
+import { Head, useForm } from '@jamesst20/inertia-react'
 import Layout from '../Components/Layout'
 
 const Form = () => {

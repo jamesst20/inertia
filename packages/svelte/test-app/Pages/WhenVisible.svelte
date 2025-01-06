@@ -1,5 +1,5 @@
 <script>
-  import { WhenVisible } from '@inertiajs/svelte'
+  import { WhenVisible } from '@jamesst20/inertia-svelte'
 </script>
 
 <div style="margin-top: 5000px">

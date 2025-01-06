@@ -1,5 +1,5 @@
 <script>
-  import { inertia, page, router, useForm } from '@inertiajs/svelte'
+  import { inertia, page, router, useForm } from '@jamesst20/inertia-svelte'
   import { onMount } from 'svelte'
 
   export let foo

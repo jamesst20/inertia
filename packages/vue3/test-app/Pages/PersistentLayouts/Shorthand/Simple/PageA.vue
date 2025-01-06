@@ -7,7 +7,7 @@ export default {
 </script>
 
 <script setup>
-import { Link, usePage } from '@inertiajs/vue3'
+import { Link, usePage } from '@jamesst20/inertia-vue3'
 
 window._inertia_page_props = usePage().props
 </script>

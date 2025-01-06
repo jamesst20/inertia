@@ -1,5 +1,5 @@
 <script>
-  import { inertia, page } from '@inertiajs/svelte'
+  import { inertia, page } from '@jamesst20/inertia-svelte'
 
   let { children } = $props()
 </script>

@@ -1,4 +1,4 @@
-import { Link } from '@inertiajs/react'
+import { Link } from '@jamesst20/inertia-react'
 export default ({ foo = 0, bar, baz, headers }) => {
   window._inertia_props = { foo, bar, baz, headers }
 

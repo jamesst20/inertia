@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Deferred, Link } from '@inertiajs/vue3'
+import { Deferred, Link } from '@jamesst20/inertia-vue3'
 
 defineProps<{
   foo?: {text: string }

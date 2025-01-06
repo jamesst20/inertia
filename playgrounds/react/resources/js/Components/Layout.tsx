@@ -1,4 +1,4 @@
-import { Link, usePage } from '@inertiajs/react'
+import { Link, usePage } from '@jamesst20/inertia-react'
 
 export default function Layout({ children }) {
   const { appName } = usePage<{ appName: string }>().props

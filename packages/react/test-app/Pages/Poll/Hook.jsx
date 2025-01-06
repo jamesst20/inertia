@@ -1,4 +1,4 @@
-import { Link, usePoll } from '@inertiajs/react'
+import { Link, usePoll } from '@jamesst20/inertia-react'
 
 export default () => {
   usePoll(500, {

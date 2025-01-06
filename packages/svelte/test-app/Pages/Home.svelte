@@ -1,5 +1,5 @@
 <script>
-  import { inertia, page, router } from '@inertiajs/svelte'
+  import { inertia, page, router } from '@jamesst20/inertia-svelte'
   import { onMount } from 'svelte'
 
   const visitsMethod = () => {

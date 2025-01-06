@@ -1,5 +1,5 @@
 <script>
-  import { page, useForm } from '@inertiajs/svelte'
+  import { page, useForm } from '@jamesst20/inertia-svelte'
 
   const form = useForm({
     name: 'foo',

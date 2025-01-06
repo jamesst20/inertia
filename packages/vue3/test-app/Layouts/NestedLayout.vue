@@ -1,5 +1,5 @@
 <script setup>
-import { usePage } from '@inertiajs/vue3'
+import { usePage } from '@jamesst20/inertia-vue3'
 import { getCurrentInstance, onMounted, ref } from 'vue'
 
 const createdAt = ref(null)

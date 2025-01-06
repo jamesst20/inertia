@@ -3,7 +3,7 @@
 </script>
 
 <script lang="ts">
-  import { router, useForm } from '@inertiajs/svelte'
+  import { router, useForm } from '@jamesst20/inertia-svelte'
   import TestGrid from '../Components/TestGrid.svelte'
   import TestGridItem from '../Components/TestGridItem.svelte'
 

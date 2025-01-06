@@ -1,5 +1,5 @@
 <script setup>
-import { useForm } from '@inertiajs/vue3'
+import { useForm } from '@jamesst20/inertia-vue3'
 
 const form = useForm({
   name: 'foo',

@@ -1,5 +1,5 @@
 <script>
-  import { Deferred, inertia } from '@inertiajs/svelte'
+  import { Deferred, inertia } from '@jamesst20/inertia-svelte'
 
   export let foo
   export let bar

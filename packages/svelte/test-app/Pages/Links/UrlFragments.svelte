@@ -1,5 +1,5 @@
 <script>
-  import { inertia } from '@inertiajs/svelte'
+  import { inertia } from '@jamesst20/inertia-svelte'
 
   let documentScrollTop = 0
   let documentScrollLeft = 0

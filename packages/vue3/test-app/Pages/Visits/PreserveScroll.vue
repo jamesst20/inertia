@@ -1,6 +1,6 @@
 <script setup>
 import WithScrollRegion from '@/Layouts/WithScrollRegion.vue'
-import { router } from '@inertiajs/vue3'
+import { router } from '@jamesst20/inertia-vue3'
 
 defineOptions({
   layout: WithScrollRegion,

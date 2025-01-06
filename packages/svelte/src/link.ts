@@ -8,7 +8,7 @@ import {
   type LinkPrefetchOption,
   type Method,
   type VisitOptions,
-} from '@inertiajs/core'
+} from '@jamesst20/inertia-core'
 import type { CancelTokenSource } from 'axios'
 import type { ActionReturn } from 'svelte/action'
 

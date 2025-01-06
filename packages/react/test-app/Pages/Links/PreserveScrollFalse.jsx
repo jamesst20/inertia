@@ -1,5 +1,5 @@
 import WithoutScrollRegion from '@/Layouts/WithoutScrollRegion.jsx'
-import { Link } from '@inertiajs/react'
+import { Link } from '@jamesst20/inertia-react'
 
 const PreserveScrollFalse = ({ foo = 'default' }) => {
   const preserveCallback = (page) => {

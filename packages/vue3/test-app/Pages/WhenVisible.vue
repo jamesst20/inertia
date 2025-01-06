@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { WhenVisible } from '@inertiajs/vue3'
+import { WhenVisible } from '@jamesst20/inertia-vue3'
 </script>
 
 <template>

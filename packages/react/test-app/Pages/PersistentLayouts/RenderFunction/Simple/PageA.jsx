@@ -1,5 +1,5 @@
 import SiteLayout from '@/Layouts/SiteLayout'
-import { Link } from '@inertiajs/react'
+import { Link } from '@jamesst20/inertia-react'
 
 const PageA = (props) => {
   return (

@@ -3,7 +3,7 @@
 </script>
 
 <script>
-  import { inertia, router } from '@inertiajs/svelte'
+  import { inertia, router } from '@jamesst20/inertia-svelte'
   export let appName
 </script>
 

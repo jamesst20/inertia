@@ -1,4 +1,4 @@
-import { useForm, usePage } from '@inertiajs/react'
+import { useForm, usePage } from '@jamesst20/inertia-react'
 
 export default (props) => {
   const form = useForm({

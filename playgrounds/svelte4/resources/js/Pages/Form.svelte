@@ -3,7 +3,7 @@
 </script>
 
 <script>
-  import { useForm } from '@inertiajs/svelte'
+  import { useForm } from '@jamesst20/inertia-svelte'
 
   export let appName
 

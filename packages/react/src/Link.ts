@@ -8,7 +8,7 @@ import {
   Progress,
   router,
   shouldIntercept,
-} from '@inertiajs/core'
+} from '@jamesst20/inertia-core'
 import { createElement, forwardRef, useEffect, useMemo, useRef, useState } from 'react'
 
 const noop = () => undefined

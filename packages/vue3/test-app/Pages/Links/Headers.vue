@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Link } from '@inertiajs/vue3'
+import { Link } from '@jamesst20/inertia-vue3'
 </script>
 
 <template>

@@ -1,5 +1,5 @@
 <script setup>
-import { Link, usePoll } from '@inertiajs/vue3'
+import { Link, usePoll } from '@jamesst20/inertia-vue3'
 
 usePoll(500, {
   only: ['custom_prop'],

@@ -1,4 +1,4 @@
-import { Page, PageProps, PageResolver, router, setupProgress } from '@inertiajs/core'
+import { Page, PageProps, PageResolver, router, setupProgress } from '@jamesst20/inertia-core'
 import { ComponentType, FunctionComponent, Key, ReactElement, ReactNode, createElement } from 'react'
 import { renderToString } from 'react-dom/server'
 import App from './App'

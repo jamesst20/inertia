@@ -1,4 +1,4 @@
-import { Link, router } from '@inertiajs/react'
+import { Link, router } from '@jamesst20/inertia-react'
 
 export default (props) => {
   const visitsMethod = (e) => {

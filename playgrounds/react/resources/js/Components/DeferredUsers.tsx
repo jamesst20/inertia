@@ -1,4 +1,4 @@
-import { usePage } from '@inertiajs/react'
+import { usePage } from '@jamesst20/inertia-react'
 
 export default () => {
   const users = usePage().props.users

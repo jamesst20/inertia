@@ -1,5 +1,5 @@
 <script setup>
-import { Link } from '@inertiajs/vue3'
+import { Link } from '@jamesst20/inertia-vue3'
 import { onMounted, ref } from 'vue'
 
 const documentScrollTop = ref(0)

@@ -1,4 +1,4 @@
-import { Head } from '@inertiajs/react'
+import { Head } from '@jamesst20/inertia-react'
 import Layout from '../Components/Layout'
 
 const Users = ({ users }) => {

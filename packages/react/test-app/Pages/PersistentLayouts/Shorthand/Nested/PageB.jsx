@@ -1,6 +1,6 @@
 import NestedLayout from '@/Layouts/NestedLayout.jsx'
 import SiteLayout from '@/Layouts/SiteLayout.jsx'
-import { Link, usePage } from '@inertiajs/react'
+import { Link, usePage } from '@jamesst20/inertia-react'
 
 const PageB = (props) => {
   window._inertia_page_props = usePage().props

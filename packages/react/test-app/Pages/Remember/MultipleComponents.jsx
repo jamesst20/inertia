@@ -1,4 +1,4 @@
-import { Link, useRemember } from '@inertiajs/react'
+import { Link, useRemember } from '@jamesst20/inertia-react'
 import { useState } from 'react'
 import ComponentA from './Components/ComponentA'
 import ComponentB from './Components/ComponentB'

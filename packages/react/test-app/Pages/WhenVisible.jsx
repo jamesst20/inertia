@@ -1,4 +1,4 @@
-import { WhenVisible } from '@inertiajs/react'
+import { WhenVisible } from '@jamesst20/inertia-react'
 
 const Foo = ({ label }) => {
   return <div>{label}</div>

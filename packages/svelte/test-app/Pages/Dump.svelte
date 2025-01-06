@@ -1,6 +1,6 @@
 <script>
   import { beforeUpdate } from 'svelte'
-  import { page } from '@inertiajs/svelte'
+  import { page } from '@jamesst20/inertia-svelte'
 
   export let headers
   export let method

@@ -1,5 +1,5 @@
 import WithScrollRegion from '@/Layouts/WithScrollRegion.jsx'
-import { Link } from '@inertiajs/react'
+import { Link } from '@jamesst20/inertia-react'
 
 const PreserveScroll = ({ foo = 'default' }) => {
   const preserveCallback = (page) => {

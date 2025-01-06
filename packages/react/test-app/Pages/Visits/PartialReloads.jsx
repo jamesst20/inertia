@@ -1,4 +1,4 @@
-import { router, usePage } from '@inertiajs/react'
+import { router, usePage } from '@jamesst20/inertia-react'
 import { useEffect } from 'react'
 
 export default ({ foo = 0, bar, baz, headers }) => {

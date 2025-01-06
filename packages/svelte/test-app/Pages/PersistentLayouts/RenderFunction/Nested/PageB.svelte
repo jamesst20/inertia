@@ -8,7 +8,7 @@
 </script>
 
 <script>
-  import { inertia } from '@inertiajs/svelte'
+  import { inertia } from '@jamesst20/inertia-svelte'
 </script>
 
 <div>

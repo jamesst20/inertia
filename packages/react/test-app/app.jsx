@@ -1,4 +1,4 @@
-import { createInertiaApp } from '@inertiajs/react'
+import { createInertiaApp } from '@jamesst20/inertia-react'
 import { createRoot } from 'react-dom/client'
 
 createInertiaApp({

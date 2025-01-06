@@ -1,4 +1,4 @@
-import { Deferred, Head } from '@inertiajs/react'
+import { Deferred, Head } from '@jamesst20/inertia-react'
 import DeferredUsers from '../Components/DeferredUsers'
 import Layout from '../Components/Layout'
 

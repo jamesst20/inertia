@@ -1,4 +1,4 @@
-import { router } from '@inertiajs/react'
+import { router } from '@jamesst20/inertia-react'
 import { useEffect, useState } from 'react'
 
 export default (props) => {

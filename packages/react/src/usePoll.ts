@@ -1,4 +1,4 @@
-import { PollOptions, ReloadOptions, router } from '@inertiajs/core'
+import { PollOptions, ReloadOptions, router } from '@jamesst20/inertia-core'
 import { useEffect, useRef } from 'react'
 
 export default function usePoll(

@@ -1,5 +1,5 @@
 <script setup>
-import { Link, useRemember } from '@inertiajs/vue3'
+import { Link, useRemember } from '@jamesst20/inertia-vue3'
 import { ref } from 'vue'
 
 const untracked = ref('')

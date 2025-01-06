@@ -1,5 +1,5 @@
 {
-  "name": "@inertiajs/svelte4-playground",
+  "name": "@jamesst20/inertia-svelte4-playground",
   "private": true,
   "type": "module",
   "scripts": {
@@ -9,7 +9,7 @@
     "check:watch": "svelte-check --tsconfig ./tsconfig.json --watch"
   },
   "devDependencies": {
-    "@inertiajs/svelte": "2.0.0",
+    "@jamesst20/inertia-svelte": "2.0.0",
     "@sveltejs/vite-plugin-svelte": "^3.1.2",
     "@tsconfig/svelte": "^5.0.4",
     "autoprefixer": "^10.4.13",

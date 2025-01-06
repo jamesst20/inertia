@@ -1,4 +1,4 @@
-import { Link, router, usePage } from '@inertiajs/react'
+import { Link, router, usePage } from '@jamesst20/inertia-react'
 
 window.messages = []
 

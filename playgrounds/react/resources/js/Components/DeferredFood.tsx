@@ -1,4 +1,4 @@
-import { useDeferred } from '@inertiajs/react'
+import { useDeferred } from '@jamesst20/inertia-react'
 
 export default () => {
   const { foods } = useDeferred('foods')

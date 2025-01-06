@@ -1,5 +1,5 @@
 <script>
-  import { usePoll } from '@inertiajs/svelte'
+  import { usePoll } from '@jamesst20/inertia-svelte'
 
   const { start, stop } = usePoll(
     500,

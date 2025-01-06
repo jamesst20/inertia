@@ -5,7 +5,7 @@
     LinkPrefetchOption,
     Method,
     PreserveStateOption,
-  } from '@inertiajs/core'
+  } from '@jamesst20/inertia-core'
   import { inertia } from '../index'
 
   export let href: string

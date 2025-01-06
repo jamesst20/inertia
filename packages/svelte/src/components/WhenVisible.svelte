@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { router, type ReloadOptions } from '@inertiajs/core'
+  import { router, type ReloadOptions } from '@jamesst20/inertia-core'
   import { onDestroy, onMount } from 'svelte'
 
   export let data: string | string[] = ''

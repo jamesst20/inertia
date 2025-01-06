@@ -1,4 +1,4 @@
-import { Link } from '@inertiajs/react'
+import { Link } from '@jamesst20/inertia-react'
 
 export default (props) => {
   const linkData = { file: new File([], 'example.jpg'), foo: 'bar' }

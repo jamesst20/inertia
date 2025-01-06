@@ -6,7 +6,7 @@ export default { layout: Layout }
 </script>
 
 <script setup lang="ts">
-import { Head, router, useForm } from '@inertiajs/vue3'
+import { Head, router, useForm } from '@jamesst20/inertia-vue3'
 import { ref, watch } from 'vue'
 
 const reloadCount = ref(0)
