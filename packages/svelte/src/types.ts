@@ -1,5 +1,5 @@
-import type { ComponentType } from 'svelte'
 import type { Page } from '@jamesst20/inertia-core'
+import type { ComponentType } from 'svelte'
 import type { RenderFunction, RenderProps } from './components/Render.svelte'
 
 export type ComponentResolver = (name: string, page: Page) => ResolvedComponent | Promise<ResolvedComponent>

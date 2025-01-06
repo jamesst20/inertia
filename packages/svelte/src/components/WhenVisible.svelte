@@ -1,24 +1,40 @@
+<script module lang="ts">
+  import type { Snippet } from 'svelte'
+
+  type WhenVisibleProps =  {
+    data: string | string[]
+    params?: ReloadOptions
+    buffer?: number
+    as?: keyof HTMLElementTagNameMap
+    always?: boolean
+    children: Snippet
+    fallback: Snippet
+  }
+</script>
+
 <script lang="ts">
   import { router, type ReloadOptions } from '@jamesst20/inertia-core'
-  import { onDestroy, onMount } from 'svelte'
 
-  export let data: string | string[] = ''
-  export let params: ReloadOptions = {}
-  export let buffer: number = 0
-  export let as: keyof HTMLElementTagNameMap = 'div'
-  export let always: boolean = false
+  let { 
+    data = '', 
+    params = {}, 
+    buffer = 0, 
+    as = 'div', 
+    always = false, 
+    children, 
+    fallback 
+  }: WhenVisibleProps = $props()
 
-  let loaded = false
-  let fetching = false
-  let el: HTMLElement
-  let observer: IntersectionObserver | null = null
+  let loaded = $state(false)
+  let fetching = $state(false)
+  let el = $state<HTMLElement>()
 
-  onMount(() => {
+  $effect(() => {
     if (!el) {
       return
     }
 
-    observer = new IntersectionObserver(
+    const observer = new IntersectionObserver(
       (entries) => {
         if (!entries[0].isIntersecting) {
           return
@@ -55,10 +71,10 @@
     )
 
     observer.observe(el)
-  })
 
-  onDestroy(() => {
-    observer?.disconnect()
+    return () => {
+      observer?.disconnect()
+    }
   })
 
   function getReloadParams(): Partial<ReloadOptions> {
@@ -81,7 +97,7 @@
 {/if}
 
 {#if loaded}
-  <slot />
-{:else if $$slots.fallback}
-  <slot name="fallback" />
+  {@render children?.()}
+{:else}
+  {@render fallback?.()}
 {/if}

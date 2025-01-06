@@ -1,4 +1,4 @@
-<script context="module">
+<script module>
   import SiteLayout from '@/Layouts/SiteLayout.svelte'
 
   export const layout = SiteLayout

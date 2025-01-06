@@ -40,10 +40,10 @@
     "!dist/**/*.spec.*"
   ],
   "peerDependencies": {
-    "svelte": "^4.0.0 || ^5.0.0 || ^5.0.0-next.244"
+    "svelte": "^5.0.0"
   },
   "dependencies": {
-    "@jamesst20/inertia-core": "2.0.0",
+    "@jamesst20/inertia-core": "^2.0.0",
     "html-escape": "^2.0.0",
     "lodash": "^4.5.0"
   },
@@ -51,16 +51,16 @@
     "@sveltejs/adapter-auto": "^3.2.0",
     "@sveltejs/kit": "^2.5.26",
     "@sveltejs/package": "^2.3.4",
-    "@sveltejs/vite-plugin-svelte": "^3.1.2",
+    "@sveltejs/vite-plugin-svelte": "^5.0.3",
     "@types/html-escape": "^2.0.2",
     "@types/lodash": "^4.17.7",
     "axios": "^1.7.6",
     "publint": "^0.2.10",
-    "svelte": "^4.2.16",
+    "svelte": "^5.16.2",
     "svelte-check": "^4.0.0",
     "tslib": "^2.7.0",
     "typescript": "^5.5.4",
-    "vite": "^5.4.8"
+    "vite": "^6.0.0"
   },
   "svelte": "./dist/index.js",
   "types": "./dist/index.d.ts",

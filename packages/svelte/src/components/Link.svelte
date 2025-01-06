@@ -1,37 +1,48 @@
+<script module lang="ts">
+  import type { Snippet } from 'svelte'
+  import type { HTMLAnchorAttributes, HTMLButtonAttributes } from 'svelte/elements'
+  import type { ActionParameters } from '../link'
+
+  type LinkProps = {
+    href: string
+    as?: keyof HTMLElementTagNameMap,
+    class?: string
+    children: Snippet
+  } & Partial<ActionParameters> & Partial<HTMLAnchorAttributes> & Partial<HTMLButtonAttributes>
+</script>
+
 <script lang="ts">
-  import type {
-    CacheForOption,
-    FormDataConvertible,
-    LinkPrefetchOption,
-    Method,
-    PreserveStateOption,
-  } from '@jamesst20/inertia-core'
   import { inertia } from '../index'
 
-  export let href: string
-  export let as: keyof HTMLElementTagNameMap = 'a'
-  export let data: Record<string, FormDataConvertible> = {}
-  export let method: Method = 'get'
-  export let replace: boolean = false
-  export let preserveScroll: PreserveStateOption = false
-  export let preserveState: PreserveStateOption | null = null
-  export let only: string[] = []
-  export let except: string[] = []
-  export let headers: Record<string, string> = {}
-  export let queryStringArrayFormat: 'brackets' | 'indices' = 'brackets'
-  export let async: boolean = false
-  export let prefetch: boolean | LinkPrefetchOption | LinkPrefetchOption[] = false
-  export let cacheFor: CacheForOption | CacheForOption[] = 0
+  let {
+    href,
+    as = 'a',
+    data = {},
+    method = 'get',
+    replace = false,
+    preserveScroll = false,
+    preserveState = undefined,
+    only = [],
+    except = [],
+    headers = {},
+    queryStringArrayFormat = 'brackets',
+    async = false,
+    prefetch = false,
+    cacheFor = 0,
+    children,
+    ...restProps
+  }: LinkProps = $props()
 
-  $: asProp = method !== 'get' ? 'button' : as.toLowerCase()
-  $: elProps =
+  let asProp = $derived(method !== 'get' ? 'button' : as.toLowerCase())
+  let elProps = $derived(
     {
       a: { href },
       button: { type: 'button' },
-    }[asProp] || {}
+    }[asProp] || {})
 </script>
 
-<!-- svelte-ignore a11y-no-static-element-interactions -->
+
+<!-- svelte-ignore a11y_no_static_element_interactions -->
 <svelte:element
   this={asProp}
   use:inertia={{
@@ -49,25 +60,8 @@
     prefetch,
     cacheFor,
   }}
-  {...$$restProps}
   {...elProps}
-  on:focus
-  on:blur
-  on:click
-  on:dblclick
-  on:mousedown
-  on:mousemove
-  on:mouseout
-  on:mouseover
-  on:mouseup
-  on:cancel-token
-  on:before
-  on:start
-  on:progress
-  on:finish
-  on:cancel
-  on:success
-  on:error
+  {...restProps as any}
 >
-  <slot />
+  {@render children()}
 </svelte:element>

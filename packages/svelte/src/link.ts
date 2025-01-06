@@ -20,7 +20,7 @@ interface ActionElement extends HTMLElement {
   href?: string
 }
 
-type ActionParameters = Omit<VisitOptions, 'data' | 'prefetch'> & {
+export type ActionParameters = Omit<VisitOptions, 'data' | 'prefetch'> & {
   href?: string
   data?: Record<string, FormDataConvertible>
   prefetch?: boolean | LinkPrefetchOption | LinkPrefetchOption[]
@@ -141,19 +141,19 @@ function link(
       onStart: (visit) => {
         inFlightCount++
         updateNodeAttributes()
-        return dispatchEvent('start', { detail: { visit } })
+        return dispatchEvent('Start', { detail: { visit } })
       },
-      onProgress: (progress) => dispatchEvent('progress', { detail: { progress } }),
+      onProgress: (progress) => dispatchEvent('Progress', { detail: { progress } }),
       onFinish: (visit) => {
         inFlightCount--
         updateNodeAttributes()
-        return dispatchEvent('finish', { detail: { visit } })
+        return dispatchEvent('Finish', { detail: { visit } })
       },
-      onBefore: (visit) => dispatchEvent('before', { cancelable: true, detail: { visit } }),
-      onCancel: () => dispatchEvent('cancel'),
-      onSuccess: (page) => dispatchEvent('success', { detail: { page } }),
-      onError: (errors) => dispatchEvent('error', { detail: { errors } }),
-      onCancelToken: (token) => dispatchEvent('cancel-token', { detail: { token } }),
+      onBefore: (visit) => dispatchEvent('Before', { cancelable: true, detail: { visit } }),
+      onCancel: () => dispatchEvent('Cancel'),
+      onSuccess: (page) => dispatchEvent('Success', { detail: { page } }),
+      onError: (errors) => dispatchEvent('Error', { detail: { errors } }),
+      onCancelToken: (token) => dispatchEvent('CancelToken', { detail: { token } }),
     }
 
     updateEventListeners()

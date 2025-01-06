@@ -1,4 +1,4 @@
-<script context="module">
+<script module>
   export { default as layout } from '@/Layouts/WithoutScrollRegion.svelte'
 </script>
 

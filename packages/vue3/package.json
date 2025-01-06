@@ -58,7 +58,7 @@
     "vue": "^3.0.0"
   },
   "dependencies": {
-    "@jamesst20/inertia-core": "2.0.0",
+    "@jamesst20/inertia-core": "file:../core",
     "lodash.clonedeep": "^4.5.0",
     "lodash.isequal": "^4.5.0"
   }

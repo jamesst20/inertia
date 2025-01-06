@@ -1,5 +1,4 @@
 import { router, type PollOptions, type ReloadOptions } from '@jamesst20/inertia-core'
-import { onDestroy, onMount } from 'svelte'
 
 export default function usePoll(
   interval: number,
@@ -14,14 +13,12 @@ export default function usePoll(
     autoStart: false,
   })
 
-  onMount(() => {
+  $effect(() => {
     if (options.autoStart ?? true) {
       start()
     }
-  })
 
-  onDestroy(() => {
-    stop()
+    return () => stop()
   })
 
   return { stop, start }

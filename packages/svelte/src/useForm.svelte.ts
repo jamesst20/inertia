@@ -13,7 +13,6 @@ import { router } from '@jamesst20/inertia-core'
 import type { AxiosProgressEvent } from 'axios'
 import cloneDeep from 'lodash/cloneDeep'
 import isEqual from 'lodash/isEqual'
-import { writable, type Writable } from 'svelte/store'
 
 type FormDataType = Record<string, FormDataConvertible>
 
@@ -47,15 +46,15 @@ export interface InertiaFormProps<TForm extends FormDataType> {
 
 export type InertiaForm<TForm extends FormDataType> = InertiaFormProps<TForm> & TForm
 
-export default function useForm<TForm extends FormDataType>(data: TForm | (() => TForm)): Writable<InertiaForm<TForm>>
+export default function useForm<TForm extends FormDataType>(data: TForm | (() => TForm)): InertiaForm<TForm>
 export default function useForm<TForm extends FormDataType>(
   rememberKey: string,
   data: TForm | (() => TForm),
-): Writable<InertiaForm<TForm>>
+): InertiaForm<TForm>
 export default function useForm<TForm extends FormDataType>(
   rememberKeyOrData: string | TForm | (() => TForm),
   maybeData?: TForm | (() => TForm),
-): Writable<InertiaForm<TForm>> {
+): InertiaForm<TForm> {
   const rememberKey = typeof rememberKeyOrData === 'string' ? rememberKeyOrData : null
   const inputData = typeof rememberKeyOrData === 'string' ? maybeData : rememberKeyOrData
   const data: TForm = typeof inputData === 'function' ? inputData() : (inputData as TForm)
@@ -67,7 +66,7 @@ export default function useForm<TForm extends FormDataType>(
   let recentlySuccessfulTimeoutId: ReturnType<typeof setTimeout> | null = null
   let transform = (data: TForm) => data as object
 
-  const store = writable<InertiaForm<TForm>>({
+  const store = $state<InertiaForm<TForm>>({
     ...(restored ? restored.data : data),
     isDirty: false,
     errors: restored ? restored.errors : {},
@@ -77,9 +76,7 @@ export default function useForm<TForm extends FormDataType>(
     recentlySuccessful: false,
     processing: false,
     setStore(keyOrData, maybeValue = undefined) {
-      store.update((store) => {
-        return Object.assign(store, typeof keyOrData === 'string' ? { [keyOrData]: maybeValue } : keyOrData)
-      })
+      Object.assign(store, typeof keyOrData === 'string' ? { [keyOrData]: maybeValue } : keyOrData)
     },
     data() {
       return Object.keys(data).reduce((carry, key) => {
@@ -242,18 +239,18 @@ export default function useForm<TForm extends FormDataType>(
     },
   } as InertiaForm<TForm>)
 
-  store.subscribe((form) => {
-    if (form.isDirty === isEqual(form.data(), defaults)) {
-      form.setStore('isDirty', !form.isDirty)
+  $effect(() => {
+    if (store.isDirty === isEqual(store.data(), defaults)) {
+      store.setStore('isDirty', !store.isDirty)
     }
 
-    const hasErrors = Object.keys(form.errors).length > 0
-    if (form.hasErrors !== hasErrors) {
-      form.setStore('hasErrors', !form.hasErrors)
+    const hasErrors = Object.keys(store.errors).length > 0
+    if (store.hasErrors !== hasErrors) {
+      store.setStore('hasErrors', !store.hasErrors)
     }
 
     if (rememberKey) {
-      router.remember({ data: form.data(), errors: form.errors }, rememberKey)
+      router.remember({ data: $state.snapshot(store.data()), errors: $state.snapshot(store.errors) }, rememberKey)
     }
   })
 
