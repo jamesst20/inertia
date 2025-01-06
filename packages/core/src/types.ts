@@ -59,7 +59,7 @@ export interface ClientSideVisitOptions {
   preserveState?: VisitOptions['preserveState']
 }
 
-export type PageResolver = (name: string) => Component
+export type PageResolver = (name: string, page: Page) => Component
 
 export type PageHandler = ({
   component,
