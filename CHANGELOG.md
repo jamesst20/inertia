@@ -7,9 +7,31 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 For changes prior to v1.0.0, see the [legacy releases](https://legacy.inertiajs.com/releases).
 
-## [Unreleased](https://github.com/inertiajs/inertia/compare/v2.0.0...HEAD)
+## [Unreleased](https://github.com/inertiajs/inertia/compare/v2.0.2...HEAD)
 
-- Nothing
+- Nothing yet
+
+## [v2.0.2](https://github.com/inertiajs/inertia/compare/v2.0.1...v2.0.2)
+
+- Fix SSR with scroll restoration ([#2190](https://github.com/inertiajs/inertia/pull/2190))
+- Fix for scroll + back bug ([#2191](https://github.com/inertiajs/inertia/pull/2191))
+- Backport 1.x fixes from [v1.3.0](https://github.com/inertiajs/inertia/releases/tag/v1.3.0) release ([#2193](https://github.com/inertiajs/inertia/pull/2193))
+
+## [v2.0.1](https://github.com/inertiajs/inertia/compare/v2.0.0...v2.0.1)
+
+- Fix playground dependencies ([#2070](https://github.com/inertiajs/inertia/pull/2070))
+- Removed Vitest tests + dependencies ([#2175](https://github.com/inertiajs/inertia/pull/2175))
+- Augment `vue` instead of `@vue/runtime-core` ([#2099](https://github.com/inertiajs/inertia/pull/2099))
+- Fix prefetch missing `cacheFor` default value ([#2136](https://github.com/inertiajs/inertia/pull/2136))
+- Fix `useForm` re-renders by memoizing functions in React [#2146](https://github.com/inertiajs/inertia/pull/2146)
+- WhenVisible useEffect function is not recreated when params change. ([#2153](https://github.com/inertiajs/inertia/pull/2153))
+- Ensure callback execution ([#2163](https://github.com/inertiajs/inertia/pull/2163))
+- More resilient logic for stripping the origin from page URLs ([#2164](https://github.com/inertiajs/inertia/pull/2164))
+- Add helper scripts for running tests ([#2173](https://github.com/inertiajs/inertia/pull/2173))
+- Export `InertiaFormProps` in React ([#2161](https://github.com/inertiajs/inertia/pull/2161))
+- Use default empty object in `useForm` Vue and Svelte ([#2052](https://github.com/inertiajs/inertia/pull/2052))
+- Remove `data` option from `useForm` options type ([#2060](https://github.com/inertiajs/inertia/pull/2060))
+- Take over scroll restoration from browser ([#2051](https://github.com/inertiajs/inertia/pull/2051))
 
 ## [v2.0.0](https://github.com/inertiajs/inertia/compare/v1.2.0...v2.0.0)
 
