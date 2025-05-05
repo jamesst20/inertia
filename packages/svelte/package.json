@@ -1,6 +1,6 @@
 {
   "name": "@jamesst20/inertia-svelte",
-  "version": "2.0.2",
+  "version": "2.0.8",
   "license": "MIT",
   "description": "The Svelte adapter for Inertia.js",
   "contributors": [
@@ -43,18 +43,17 @@
     "svelte": "^5.0.0"
   },
   "dependencies": {
-    "@jamesst20/inertia-core": "2.0.2",
-    "html-escape": "^2.0.0",
-    "lodash": "^4.5.0"
+    "@jamesst20/inertia-core": "2.0.8",
+    "es-toolkit": "^1.33.0",
+    "html-escape": "^2.0.0"
   },
   "devDependencies": {
     "@sveltejs/adapter-auto": "^3.2.0",
-    "@sveltejs/kit": "^2.5.26",
+    "@sveltejs/kit": "^2.20.6",
     "@sveltejs/package": "^2.3.4",
     "@sveltejs/vite-plugin-svelte": "^5.0.3",
     "@types/html-escape": "^2.0.2",
-    "@types/lodash": "^4.17.7",
-    "axios": "^1.7.6",
+    "axios": "^1.8.2",
     "publint": "^0.2.10",
     "svelte": "^5.16.2",
     "svelte-check": "^4.0.0",

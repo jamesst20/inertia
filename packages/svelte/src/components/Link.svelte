@@ -4,7 +4,7 @@
   import type { ActionParameters } from '../link'
 
   type LinkProps = {
-    href: string
+    href?: string | { url: string; method: Method }
     as?: keyof HTMLElementTagNameMap,
     class?: string
     children: Snippet
@@ -15,10 +15,10 @@
   import { inertia } from '../index'
 
   let {
-    href,
+    href: hrefProp = '',
     as = 'a',
     data = {},
-    method = 'get',
+    method: methodProp = 'get',
     replace = false,
     preserveScroll = false,
     preserveState = undefined,
@@ -32,6 +32,9 @@
     children,
     ...restProps
   }: LinkProps = $props()
+
+  let method = $derived(typeof methodProp === 'object' ? methodProp.method : methodProp)
+  let href = $derived(typeof hrefProp === 'object' ? hrefProp.url : hrefProp)
 
   let asProp = $derived(method !== 'get' ? 'button' : as.toLowerCase())
   let elProps = $derived(

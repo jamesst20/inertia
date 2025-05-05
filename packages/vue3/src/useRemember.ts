@@ -1,5 +1,5 @@
 import { router } from '@jamesst20/inertia-core'
-import cloneDeep from 'lodash.clonedeep'
+import { cloneDeep } from 'es-toolkit'
 import { isReactive, reactive, ref, Ref, watch } from 'vue'
 
 export default function useRemember<T extends object>(
